@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="icon" href="images/uOttawa Logo.jpg" type="image/gif" />
+  <title> uOttawa Dentist </title>
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="css/style.css" rel="stylesheet"/>
+
+</head>
+
+<script>
+  window.addEventListener("scroll", function () {
+    var fadeInSections = document.querySelectorAll(".fade-in-section");
+    for (var i = 0; i < fadeInSections.length; i++) {
+      var section = fadeInSections[i];
+      var positionFromTop = section.getBoundingClientRect().top;
+      var windowHeight = window.innerHeight;
+  
+      if (positionFromTop - windowHeight <= 0) {
+        section.classList.add("fade-in");
+      }
+    }
+  });
+
+  $('.slider').each(function() {
+    var $this = $(this);
+    var $group = $this.find('.slide_group');
+    var $slides = $this.find('.slide');
+    var bulletArray = [];
+    var currentIndex = 0;
+    var timeout;
+    
+    function move(newIndex) {
+      var animateLeft, slideLeft;
+      
+      advance();
+      
+      if ($group.is(':animated') || currentIndex === newIndex) {
+        return;
+      }
+      
+      bulletArray[currentIndex].removeClass('active');
+      bulletArray[newIndex].addClass('active');
+      
+      if (newIndex > currentIndex) {
+        slideLeft = '100%';
+        animateLeft = '-100%';
+      } else {
+        slideLeft = '-100%';
+        animateLeft = '100%';
+      }
+      
+      $slides.eq(newIndex).css({
+        display: 'block',
+        left: slideLeft
+      });
+      $group.animate({
+        left: animateLeft
+      }, function() {
+        $slides.eq(currentIndex).css({
+          display: 'none'
+        });
+        $slides.eq(newIndex).css({
+          left: 0
+        });
+        $group.css({
+          left: 0
+        });
+        currentIndex = newIndex;
+      });
+    }
+    
+    function advance() {
+      clearTimeout(timeout);
+      timeout = setTimeout(function() {
+        if (currentIndex < ($slides.length - 1)) {
+          move(currentIndex + 1);
+        } else {
+          move(0);
+        }
+      }, 4000);
+    }
+    
+    $('.next_btn').on('click', function() {
+      if (currentIndex < ($slides.length - 1)) {
+        move(currentIndex + 1);
+      } else {
+        move(0);
+      }
+    });
+    
+    $('.previous_btn').on('click', function() {
+      if (currentIndex !== 0) {
+        move(currentIndex - 1);
+      } else {
+        move(3);
+      }
+    });
+    
+    $.each($slides, function(index) {
+      var $button = $('<a class="slide_btn">&bull;</a>');
+      
+      if (index === currentIndex) {
+        $button.addClass('active');
+      }
+      $button.on('click', function() {
+        move(index);
+      }).appendTo('.slide_buttons');
+      bulletArray.push($button);
+    });
+    
+    advance();
+  });
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var sidebarToggle = document.getElementById("sidebar-toggle");
+    var sidebar = document.getElementById("sidebar");
+    var body = document.querySelector("body");
+
+
+    sidebarToggle.addEventListener("click", function (event) {
+      event.preventDefault();
+      sidebar.classList.toggle("active");
+    });
+    body.addEventListener("click", function (event) {
+      if (!sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
+        sidebar.classList.remove("active");
+      }
+    });
+  });
+</script>
+
+<body>
+
+  <header class="header_section">
+
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand"  id="sidebar-toggle">
+          <span>
+            <link rel="icon" href="images/uOttawa Logo.jpg" type="image/gif" />
+            <img src="images/uottawa icon.png" alt="uOttawa Logo" style="width: 45px; height: auto;"/>
+             uOttawa <br> Dentist
+          </span>
+          <nav id="sidebar">
+            <img src="images/uOttawa Logo.jpg" alt="uOttawa Logo" style="width: 100px; height: auto;"/>
+            <br>uOttawa Dentist
+            <ul>
+              <li>
+                <a class="nav-link"  href="index.html">Home</a>
+              </li>
+              <li>
+                <a  class="nav-link" href="about.html">About Us</a>
+              </li>
+              <li>
+                <a class="nav-link" href="services.html">Services</a>
+              </li>
+              <li>
+                <a class="nav-link" href="experts.html">Experts</a>
+              </li>
+              <li>
+                <a class="nav-link"  href="review.html">Reviews</a>
+              </li>
+              <li>
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              <li>
+                <a class="nav-link" href="book.html">Book Consultation</a>
+              </li>
+            </ul>
+        </nav>
+        </a>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="experts.html">Experts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="review.html">Reviews</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="book.html">Book Consultation</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+ <section class="about_section layout_padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="img-box">
+          <img src="images/DoctorTeam.jpg" alt="">
+
+        </div>
+      </div>
+      <div class="col-md-6"><div class="detail-box">
+        <div class="heading_container">
+          <br>
+          <br>
+          <br>
+          <h2>About Us</h2>
+        </div>
+        <p>
+          uOttawa Dentistry is a dental center located in Ottawa, Canada. It is a reputable dental practice that provides comprehensive oral health care services to patients of all ages. The center is affiliated with the University of Ottawa, ensuring that patients receive high-quality dental care backed by the latest advancements in dentistry.
+
+          <br><br>At uOttawa Dentistry, a team of experienced and skilled dentists, hygienists, and dental professionals work together to deliver personalized and patient-centered dental care. They are committed to promoting oral health and providing treatments to address various dental needs, ranging from preventive care and routine check-ups to more specialized procedures.
+          
+          <br><br>The center offers a wide range of dental services, including dental cleanings, fillings, extractions, root canals, crowns, bridges, dentures, orthodontics, and cosmetic dentistry procedures. They utilize advanced dental technology and techniques to ensure accurate diagnoses and effective treatments.
+          
+          <br><br>The team at uOttawa Dentistry prioritizes patient comfort and strives to create a welcoming and relaxing environment. They understand the importance of patient education and take the time to explain treatment options, answer questions, and provide guidance for maintaining optimal oral health.
+          
+          <br><br>With a focus on continuous learning and professional development, uOttawa Dentistry stays up-to-date with the latest trends and advancements in dentistry. This enables them to offer modern and evidence-based treatments, ensuring the best possible outcomes for their patients.
+          
+          <br><br>Overall, uOttawa Dentistry is dedicated to providing exceptional dental care in a compassionate and patient-centric manner. They aim to help individuals achieve and maintain healthy, beautiful smiles while promoting overall oral health and well-being.
+        </p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+  <footer class="footer_section fade-in-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 footer-col">
+          <div class="footer_content">
+            <h4>Reach at:</h4>
+            <div class="contact_link_box">
+              <a href="https://www.google.com/maps/place/InfoService,+Ottawa,+ON+K1N+6N5/data=!4m2!3m1!1s0x4cce0506ee1a018f:0x72c97e73ba1e60ba?sa=X&ved=2ahUKEwjAtf2J8Kz_AhWyjYkEHarQCGgQ8gF6BAhIEAE"><i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>Location: 75 Laurier Ave E, Ottawa</span></a>
+              <br>
+              <a href="tel:(613) 562-5701"><i class="fa fa-phone" aria-hidden="true"></i>
+              <span>Call +1 (613) 562-5701</span></a>
+              <a href="mailto: dentistry@uOttawa.ca"><i class="fa fa-envelop" aria-hidden="true"></i>
+              <span>dentistry@uOttawa.ca</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 footer-col">
+          <div class="footer_detail">
+            <a href="" class="footer-logo">
+              uOttawa Dentistry
+            </a>
+            <p>uOttawa Dentistry is a dental center located in Ottawa, Canada. It is a reputable dental practice that provides comprehensive oral health care services to patients of all ages
+
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 footer-col">
+          <div class="map_container">
+            <div class="map">
+              <div id="googleMap">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.2554540343895!2d-75.6861364!3d45.4243516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce0506ee1a018f%3A0x72c97e73ba1e60ba!2sInfoService%2C%20Ottawa%2C%20ON%20K1N%206N5!5e0!3m2!1sen!2sca!4v1686183640770!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>&copy; <span id="displayYear">2023</span><br>Axel Tang UI Project 1
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/bootstrap.js"></script>
+  <script src="js/custom.js"></script>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="icon" href="images/uOttawa Logo.jpg" type="image/gif" />
+  <title> uOttawa Dentist </title>
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="css/style.css" rel="stylesheet"/>
+
+</head>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var sidebarToggle = document.getElementById("sidebar-toggle");
+    var sidebar = document.getElementById("sidebar");
+    var body = document.querySelector("body");
+
+
+    sidebarToggle.addEventListener("click", function (event) {
+      event.preventDefault();
+      sidebar.classList.toggle("active");
+    });
+    body.addEventListener("click", function (event) {
+      if (!sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
+        sidebar.classList.remove("active");
+      }
+    });
+  });
+</script>
+
+<body>
+
+  <header class="header_section">
+
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand"  id="sidebar-toggle">
+          <span>
+            <link rel="icon" href="images/uOttawa Logo.jpg" type="image/gif" />
+            <img src="images/uottawa icon.png" alt="uOttawa Logo" style="width: 45px; height: auto;"/>
+             uOttawa <br> Dentist
+          </span>
+          <nav id="sidebar">
+            <img src="images/uOttawa Logo.jpg" alt="uOttawa Logo" style="width: 100px; height: auto;"/>
+            <br>uOttawa Dentist
+            <ul>
+              <li>
+                <a class="nav-link"  href="index.html">Home</a>
+              </li>
+              <li>
+                <a  class="nav-link" href="about.html">About Us</a>
+              </li>
+              <li>
+                <a class="nav-link" href="services.html">Services</a>
+              </li>
+              <li>
+                <a class="nav-link" href="experts.html">Experts</a>
+              </li>
+              <li>
+                <a class="nav-link"  href="review.html">Reviews</a>
+              </li>
+              <li>
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              <li>
+                <a class="nav-link" href="book.html">Book Consultation</a>
+              </li>
+            </ul>
+        </nav>
+        </a>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="experts.html">Experts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="review.html">Reviews</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="book.html">Book Consultation</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+<br><br><br><br><br>
+
+      <section class="testimonials-section">
+        <div class="container">
+          <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 testimonials">
+            <div class="training-title">
+              <h4 class="aoe-title">Services:</h4>
+              <div class="line"></div>
+            </div>      
+      
+          <div class="col-center m-auto">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+       
+
+              <div class="carousel-inner">
+                <div class="item carousel-item active">
+                  <div class="img-box"><img src="images/dentalcheckup.jpg" alt=""></div>
+                  <h4 class="carousel-title">Teeth Cleaning and Dental Check-ups</h4>
+                  <div class="carousel-line"></div>
+      
+                  <p class="testimonial"> One of the primary services offered at a dentist center is routine teeth cleaning and dental check-ups. These appointments involve a thorough examination of the teeth, gums, and mouth to assess oral health and detect any potential issues. The dentist or dental hygienist will clean and remove plaque and tartar buildup, polish the teeth, and provide guidance on proper oral hygiene practices.</p>
+                  <p class="overview"><b>Dr. Matthew White</b></p>
+                  <h6 class="company-name"><b>Cost: 100 CAD Per Session</b></h6>
+                </div>
+      
+                <div class="item carousel-item">
+                  <div class="img-box"><img src="images/RestorativeDentistry.jpg" alt=""></div>
+                  <h4 class="carousel-title">Restorative Dentistry</h4>
+                  <div class="carousel-line"></div>
+      
+                  <p class="testimonial">Another important service provided by a dentist center is restorative dentistry. This includes procedures aimed at repairing and restoring damaged or decayed teeth. Common restorative treatments may include dental fillings to treat cavities, dental crowns to restore and strengthen a tooth, and dental bridges or implants to replace missing teeth. The goal of restorative dentistry is to improve the functionality, aesthetics, and overall health of the patient's smile.</p>
+                  <p class="overview"><b>Dr. Olivia Stone</b></p>
+                  <h6 class="company-name"><b>Cost: 500 CAD Per Session</b></h6>
+                </div>
+      
+                <div class="item carousel-item">
+                  <div class="img-box"><img src="images/cosmetic.jpg" alt=""></div>
+                  <h4 class="carousel-title">Cosmetic Dentistry</h4>
+                  <div class="carousel-line"></div>
+      
+                  <p class="testimonial"> Many dentist centers offer cosmetic dentistry services to enhance the appearance of a patient's smile. These services focus on improving the aesthetics of teeth and include procedures such as teeth whitening, dental veneers to address tooth imperfections, dental bonding to repair chipped or misshapen teeth, and orthodontic treatments like braces or clear aligners to straighten misaligned teeth. Cosmetic dentistry aims to create a more confident and attractive smile for patients. </p>
+                  <p class="overview"><b>Dr. Ethan Reed</b></p>
+                  <h6 class="company-name"><b>Cost: Contact For Information</b></h6>
+                </div>
+      
+              </div>
+
+              <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev"><span><</span>
+              </a>
+              <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next"><span>></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <p class="center"> More services will be offered upon request | Leave a note upon booking </p>
+        </div>
+
+      </div>
+
+      </section>
+
+
+  <footer class="footer_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 footer-col">
+          <div class="footer_content">
+            <h4>Reach at:</h4>
+            <div class="contact_link_box">
+              <a href="https://www.google.com/maps/place/InfoService,+Ottawa,+ON+K1N+6N5/data=!4m2!3m1!1s0x4cce0506ee1a018f:0x72c97e73ba1e60ba?sa=X&ved=2ahUKEwjAtf2J8Kz_AhWyjYkEHarQCGgQ8gF6BAhIEAE"><i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>Location: 75 Laurier Ave E, Ottawa</span></a>
+              <br>
+              <a href="tel:(613) 562-5701"><i class="fa fa-phone" aria-hidden="true"></i>
+              <span>Call +1 (613) 562-5701</span></a>
+              <a href="mailto: dentistry@uOttawa.ca"><i class="fa fa-envelop" aria-hidden="true"></i>
+              <span>dentistry@uOttawa.ca</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 footer-col">
+          <div class="footer_detail">
+            <a href="" class="footer-logo">
+              uOttawa Dentistry
+            </a>
+            <p>uOttawa Dentistry is a dental center located in Ottawa, Canada. It is a reputable dental practice that provides comprehensive oral health care services to patients of all ages
+
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 footer-col">
+          <div class="map_container">
+            <div class="map">
+              <div id="googleMap">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.2554540343895!2d-75.6861364!3d45.4243516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce0506ee1a018f%3A0x72c97e73ba1e60ba!2sInfoService%2C%20Ottawa%2C%20ON%20K1N%206N5!5e0!3m2!1sen!2sca!4v1686183640770!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>&copy; <span id="displayYear">2023</span><br>Axel Tang UI Project 1
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/custom.js"></script>
+
+
+
+
+
+</body>
+
+</html>
