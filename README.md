@@ -3,7 +3,7 @@
 - A simple Dentistry Website made to fit the University of Ottawa Theme
 
 # How to deploy/launch
-- This is not hosted or deployed publicly as it is for educational purposes.
+- Link: https://leafy-banoffee-abef26.netlify.app/
 - Download the zip file and open main page "Index.html"
 
 # Languages:
